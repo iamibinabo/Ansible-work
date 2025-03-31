@@ -1,0 +1,24 @@
+---
+- name: Deploy E-commerce Application
+  hosts: n2
+  become: yes
+
+
+  tasks:
+  - name: Install Git
+    yum:
+      name: git
+      state: present
+
+  
+  - name: Host Code
+    git:
+      repo: https://github.com/iamibinabo/ansible-work-5.git
+      dest:  /var/www/html
+ 
+
+  - name: Enable Httpd
+    service:
+      name: httpd
+      enabled: yes
+ 
