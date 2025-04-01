@@ -7,7 +7,6 @@
   roles:
     - apache
     - html
-    - php
   
   
  
